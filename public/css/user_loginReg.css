@@ -1,0 +1,38 @@
+body{
+    background-image: radial-gradient(#84208E 10%, #00205F 110%);
+    width: 100%;
+    height: 100vh;
+    font-family: 'montserrat-medium' !important;
+}
+
+.login_reg_button{
+    border: none !important;
+    background-color: #6946F6 !important;
+    padding: 15px 10px !important;
+    margin: 0;
+    font-family: 'montserrat-bold' !important;
+    font-size: 20px !important;
+    color: white !important;
+}
+
+.login_reg_button:hover{
+    background-color: #83208E !important;
+    cursor: pointer;
+}
+
+.form_input_icon{
+    font-size: 25px !important;
+}
+
+.form_header{
+    font-family: 'montserrat-bold' ;
+}
+
+.loginReg_icon_container{
+    background-image: linear-gradient(#e8e8e8, #6946F6) !important;
+}
+
+.card_whole_container{
+    border: 1px solid rgb(36, 36, 36) !important;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0), 0 2px 5px 0 rgba(0, 0, 0, 0.15) !important;
+}

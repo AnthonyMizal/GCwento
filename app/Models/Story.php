@@ -9,20 +9,26 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Story extends Model
 {
     use HasFactory, SoftDeletes;
-    public function user() {
+
+    protected $fillable = ['title', 'description', 'content', 'status'];
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function comments() {
+    public function comments()
+    {
         return $this->hasMany(Comment::class);
     }
 
-    public function genres() {
+    public function genres()
+    {
         return $this->hasMany(Genre::class);
     }
 
-    
-    public function favorite() {
-        return $this->belongsTo(Favorite::class);
+
+    public function favorite()
+    {
+        return $this->hasMany(Favorite::class);
     }
 }

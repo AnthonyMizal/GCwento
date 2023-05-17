@@ -1,0 +1,16 @@
+
+.bookCont{
+    background-color: #1B192E;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 7px;
+}
+.bookCont h3{
+    font-size: 15px;
+    color: white;
+}
+.mainBookCont{
+    display: flex;
+    gap: 10px;
+}

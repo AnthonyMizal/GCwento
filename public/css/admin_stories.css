@@ -1,0 +1,212 @@
+.tabs_list_container a:nth-of-type(1){
+    color: #CCCCCC !important;
+    background-color: transparent !important;
+    border: 1px solid #7A7A7A !important;
+    pointer-events: inherit;
+}
+
+.tabs_list_container a:nth-of-type(1):hover{
+    border: 1px solid white !important;
+}
+
+.tabs_list_container a:nth-of-type(2){
+    color: #CCCCCC !important;
+    background-color: transparent !important;
+    border: 1px solid #7A7A7A !important;
+    pointer-events: inherit;
+}
+
+.tabs_list_container a:nth-of-type(2):hover{
+    border: 1px solid white !important;
+}
+
+.tabs_list_container a:nth-of-type(3){
+    color: white !important;
+    background-color: #6946F6 !important;
+    border: #422c9b;
+    pointer-events: auto;
+}
+
+
+/* Modal
+
+/* The Modal (background) */
+.story_modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.story_modal_content {
+    margin: 2% auto; /* 15% from the top and centered */
+    width: 90%; /* Could be more or less, depending on screen size */
+    height: 900px;
+    /* border: 1px solid #452077; */
+    border-radius: 7px 7px 7px 7px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0), 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* The Close Button */
+.close {
+    color: #c2c2c2;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #FF5D5D;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalHeader{
+    background-color: #452077;
+    padding: 15px 0;
+    border-bottom: 1px solid #dfdede;
+    border-radius: 5px 5px 0 0;
+}
+
+.modal_header_container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.modalHeader h1{
+    font-family: 'montserrat-bold';
+    color: white;
+    font-size: 23px;
+}
+
+.textArea {
+    margin-top: 10px;
+    background-color: #F1F1F1;
+    border-radius: 5px;
+    font-family: 'montserrat-regular';
+    padding: 10px;
+    border: none;
+}
+
+.modalLine{
+    margin-top: 0;
+    width: 100px;
+    height: 3px;
+    background-color: white;
+} 
+
+#modal_body{
+    width: 90%; 
+    margin: 3% auto;
+    height: 650px;
+    font-family: 'Montserrat-Regular';
+}
+
+#modal_body_title{
+    font-family: 'Montserrat-Medium';
+    font-size: 20px;
+    color: #313131;   
+}
+
+.modal_body_text_input{
+    font-family: 'Montserrat-Regular';
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #dedede;
+    height: 180px;
+    resize: none;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}
+
+.modal_body_text_input:focus, .modal_body_text_input:active{
+    outline: none !important;
+    box-shadow: none;
+}
+
+.modal_content_container{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.modal_story_content_container{
+    height: 500px;
+    overflow-y: auto;
+    text-align: justify;
+    padding-right: 5px;
+    margin-bottom: 20px;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}
+
+.modal_account_name_container{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-family: 'Montserrat-Bold';
+    font-size: 25px;
+    color: #452077;
+}
+
+.modal_account_story_dp_container{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+
+.modal_story_account_dp{
+    width: 100%;
+    border-radius: 60px;
+    border: 1px solid #dedede;
+}
+
+.modal_story_account_penname{
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+.modal_account_name_separator{
+    margin-bottom: 0;
+}
+
+.modal_story_account_name{
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+
+.modal_story_whole_line_separator{
+    height: 1px;
+    width: 100%;
+    background-color: #dedede;
+    margin: 20px 0;
+}
+
+.modal_story_title_genre_container{
+    font-family: 'Montserrat-Bold';
+}
+
+.modal_story_date_created_container{
+    font-family: 'Montserrat-Medium';
+    font-size: 16px;
+    color: #888888;
+
+}
+
+.modal_story_date_icon{
+    margin-right: 5px;
+}
+
+.modal_story_genre_container{
+    margin-top: -15px;
+}
+

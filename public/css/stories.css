@@ -1,0 +1,25 @@
+/* 
+.bookCont{
+    background-color: #1B192E;
+    width: 200px;
+    text-align: center;
+    border-radius: 7px;
+    display: flex;
+
+}
+.bookCont h3{
+    font-size: 15px;
+    color: white;
+}
+.mainBookCont{
+    display: flex;
+    gap: 10px;
+}
+
+.cover_img{
+    width: 100px;
+}
+
+.formBG{
+    background-color: #1B192E;
+} */
