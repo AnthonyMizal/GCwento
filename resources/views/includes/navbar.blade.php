@@ -12,10 +12,10 @@
 
           <h3 class="management_header"> MANAGEMENT </h3>
   
-          <a href="/admin_index" class="nav_item_button active"> <i class='bx bxs-dashboard active_tab_icon'></i> PANEL </a>
-          <a href="/admin_users" class="nav_item_button"> <i class='bx bxs-user inactive_tab_icon'></i> USERS </a>
-          <a href="/admin_stories" class="nav_item_button"> <i class='bx bxs-user inactive_tab_icon'></i> STORIES </a>
-          <a href="/admin_banning" class="nav_item_button"> <i class='bx bxs-user inactive_tab_icon'></i> BANNING </a>
+          <a href="/admin/index" class="nav_item_button active"> <i class='bx bxs-dashboard active_tab_icon'></i> PANEL </a>
+          <a href="/admin/users" class="nav_item_button"> <i class='bx bxs-user inactive_tab_icon'></i> USERS </a>
+          <a href="/admin/stories" class="nav_item_button"> <i class='bx bxs-user inactive_tab_icon'></i> STORIES </a>
+          <a href="/admin/banning" class="nav_item_button"> <i class='bx bxs-user inactive_tab_icon'></i> BANNING </a>
 
 
         </div>

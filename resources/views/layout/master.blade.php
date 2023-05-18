@@ -21,13 +21,18 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_users.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_stories.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_banning.css') }}" >
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_login.css') }}" > --}}
 </head>
 
 
 
 <body>
-    @include('includes.navbar')
-    <div class="container"> 
+
+    
+    <div class="container-fluid"> 
+        @auth
+        @include('includes.navbar')
+        @endauth
         @yield('content')
     </div>
 

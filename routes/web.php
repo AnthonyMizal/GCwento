@@ -39,10 +39,11 @@ Route::get('/', function () {
 // });
 
 // Admin
+Route::get('admin/users', [App\Http\Controllers\UserController::class, 'userAdminTable']);
 Route::get('getStory', [App\Http\Controllers\StoryController::class, 'adminGetStory']);
-Route::get('admin_stories', [App\Http\Controllers\StoryController::class, 'adminStories']);
-Route::get('admin_index', [App\Http\Controllers\StoryController::class, 'adminPublishedCount']);
-
+Route::get('admin/stories', [App\Http\Controllers\StoryController::class, 'adminStories']);
+Route::get('admin/index', [App\Http\Controllers\StoryController::class, 'adminPublishedCount']);
+Route::get('user/story/{id}', [App\Http\Controllers\StoryController::class, 'adminUserStories']);
 // Client
 
 // Route::get('login', [App\Http\Controllers\UserController::class, 'index']);
@@ -54,6 +55,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::post('/login', 'LoginController@login')->name('login.perform');
     Route::get('/register', 'RegisterController@show')->name('register.show');
     Route::post('/register', 'RegisterController@register')->name('register.perform');
+
+    Route::get('/login/admin', 'LoginController@showAdmin')->name('login.showAdmin');
+
 
 
     Route::get('/logout', 'LoginController@logout')->name('logout');

@@ -164,20 +164,34 @@ class StoryController extends Controller
         return view('client.mystories');
     }
 
+
+
+
+
+
+
     public function adminPublishedCount(){
         $pendingCount = Story::where('status', 'Pending')->count();
         $publishedCount = Story::where('status', 'Published')->count();
         $rejectedCount = Story::where('status', 'Rejected')->count();
-        return view('admin.html.index', compact('publishedCount', 'pendingCount', 'rejectedCount'));
+        return view('admin.index', compact('publishedCount', 'pendingCount', 'rejectedCount'));
     }
 
     public function adminStories()
     {
         $stories = Story::with('user')->get();
-
-        return view('admin.html.stories', compact('stories'));
+        
+        return view('admin.stories', compact('stories'));
         // return $stories;
     }
+
+    public function adminUserStories($id)
+    {
+        $stories = Story::with('user')->where('id', $id)->get();
+        return response()->json($stories);
+        // return $stories;
+    }
+
 
     public function adminGetStory()
     {
@@ -186,4 +200,6 @@ class StoryController extends Controller
         return $stories;
         // return $stories;
     }
+
+
 }

@@ -12,6 +12,10 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+    public function showAdmin() {
+        return view('auth.adminlogin');
+    }
+
     public function login(Request $request) {
   
 
@@ -22,7 +26,13 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('stories/index');
+
+            if(auth()->user()->role == 'Admin'){
+                return redirect()->intended('admin/index');
+            } else {
+                return redirect()->intended('stories/index');
+            }
+            
         }
 
         return back()->withErrors([
