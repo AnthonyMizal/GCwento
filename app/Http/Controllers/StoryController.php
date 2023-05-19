@@ -15,11 +15,32 @@ class StoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {   
-        $stories = Story::with('user')->get();
-        return view('client.index', compact('stories'));
-    }
+    // public function index()
+    // {   
+    //     $stories = Story::with('user')->get();
+    //     return view('client.index', compact('stories'));
+    // }
+
+    public function index(Request $request)
+{
+    $keyword = $request->input('search');
+    $dropDown = $request->input('genre');
+
+    $query = Story::with('user');
+
+    if ($keyword) {
+        $query->where('title', 'like', '%'.$keyword.'%')
+        ->orWhere('genres', 'like', '%'.$keyword.'%');
+    };
+
+    if ($dropDown) {
+        $query->where('title', 'like', '%'.$dropDown.'%')
+        ->orWhere('genres', 'like', '%'.$dropDown.'%');
+    };
+
+    $stories = $query->get();
+    return view('client.index', ['stories' => $stories, 'search' => $keyword, 'selectedGenre' => $dropDown]);
+}
 
 
     public function userStory()

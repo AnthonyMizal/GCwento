@@ -56,7 +56,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::post('/login', 'LoginController@login')->name('login.perform');
     Route::get('/register', 'RegisterController@show')->name('register.show');
     Route::post('/register', 'RegisterController@register')->name('register.perform');
-
     Route::get('/login/admin', 'LoginController@showAdmin')->name('login.showAdmin');
 
 

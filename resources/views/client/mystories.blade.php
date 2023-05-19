@@ -20,15 +20,15 @@
                 </div>
         
                 <div class="px-2">
-                    <select class="form-select dropdown_button rounded-5 px-4 py-3 shadow-none" aria-label="Default select example">
-                        <option selected hidden> GENRE </option>
-                        <option value="action">Action</option>
-                        <option value="comedy">Comedy</option>
-                        <option value="horror">Horror</option>
-                        <option value="mystery">Mystery</option>
-                        <option value="romance">Romance</option>
-                        <option value="thriller">Thriller</option>
-                        <option value="others">Others</option>
+                    <select class="form-select dropdown_button rounded-5 px-4 py-3 shadow-none" id="categoryFilter" aria-label="Default select example">
+                        <option selected value=""> ALL </option>
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Mystery">Mystery</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Others">Others</option>
                     </select>
                 </div>
             </div>  

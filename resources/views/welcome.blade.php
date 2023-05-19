@@ -30,7 +30,7 @@
         <div class="container_home row d-flex justify-content-center align-items-center" id="home">
             <div class=" col-5 d-flex justify-content-center align-items-center">
                 <div class=" home_main_text_container">
-                    <h1>A BOOKSHELF <br/>
+                    <h1 class="title bounceIn">A BOOKSHELF <br/>
                         IN YOUR <br>
                         POCKET
                     </h1>
@@ -47,8 +47,8 @@
                 </div>
             </div>
     
-            <div class=" col-5 d-flex justify-content-center">
-                <img class="home_img" src="/assets/General/welc_home_img.png">
+            <div class="col-5 d-flex justify-content-center animated bounceInDown">
+                <img class="home_img animated infinite pulse" src="/assets/General/welc_home_img.png">
             </div>
 
             <img class="line1" src="{{url('/assets/General/line2.png')}}"/>
@@ -61,7 +61,7 @@
             <img class="img-fluid" src="{{url('/assets/General/wave.png')}}" style="width: 100%"/>
             <div class="container_about d-flex justify-content-center align-items-center">
                 <div class="col-5 d-flex justify-content-center align-items-center">
-                    <img class="about_img w-50" src="../assets/General/welc_about_img.png">
+                    <img class="about_img animated w-50" src="../assets/General/welc_about_img.png">
                 </div>
         
                 <div class="about_us_contents col-5 d-flex flex-column justify-content-center">
