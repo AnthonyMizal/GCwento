@@ -27,7 +27,7 @@
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_login.css') }}" > --}}
 </head>
 
-{{-- nathaskdhkl;d --}}
+{{-- new comment --}}
 
 <body>
     @auth
