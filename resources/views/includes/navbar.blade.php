@@ -24,7 +24,8 @@
     </nav>
 
     <div class="logout_container">
-      <button class="logout_icon_button"><i class='bx bxs-exit logout_icon'></i></button>
+      {{-- <button class="logout_icon_button"><i class='bx bxs-exit logout_icon'></i></button> --}}
+      <a href="/logout" class="logout_icon_button"><i class='bx bxs-exit logout_icon'></i></a>
     </div>
     
 </div>

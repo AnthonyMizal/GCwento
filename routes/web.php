@@ -46,6 +46,7 @@ Route::get('admin/index', [App\Http\Controllers\StoryController::class, 'adminPu
 Route::get('user/story/{id}', [App\Http\Controllers\StoryController::class, 'adminUserStories']);
 // Client
 
+
 // Route::get('login', [App\Http\Controllers\UserController::class, 'index']);
 
 //Refactoring of route

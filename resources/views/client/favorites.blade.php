@@ -54,7 +54,7 @@
                     </div>
                     <div class="fav_story_block_details text-center mt-2">
                         <h3 class="fav_story_title dwhite_color">{{ $favorite->story->title}}</h3>
-                        <p class="fav_story_genre dwhite_color"> GENRE: Grilled, Balut</p>
+                        <p class="fav_story_genre dwhite_color">{{ $story->genres}}</p>
                         <p class="fav_story_author bpurple_highlighter">- {{ $favorite->story->user->username}}</p>
                     </div>
                 </div>

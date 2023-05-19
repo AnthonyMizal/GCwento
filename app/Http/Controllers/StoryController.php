@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Story;
 use App\Models\Comment;
 use App\Models\Favorite;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class StoryController extends Controller
@@ -33,7 +34,8 @@ class StoryController extends Controller
      */
     public function create()
     {
-        return view('client.create');
+        $genres = Genre::all();
+        return view('client.create', compact('genres'));
     }
 
     /**
@@ -68,6 +70,11 @@ class StoryController extends Controller
         $story->description = $request->description;
         $story->content = $request->content;
         $story->cover = $fileNameToStore;
+
+        $genreIds = $request->input('genres', []);
+        $genreIdsString = implode(', ', $genreIds);
+        $story->genres = $genreIdsString;
+
         $story->save();
         return redirect('stories/index');
     }

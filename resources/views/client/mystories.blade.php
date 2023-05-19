@@ -59,7 +59,7 @@
                     <tr>
                         <td> <img class="mystories_cover_img" src="{{asset('/storage/img/'.$story->cover)}}"/> </td>
                         <td class="mystories_story_title">{{ $story->title}}</td>
-                        <td>Grilled, Balut</td>
+                        <td>{{ $story->genres}}</td>
                         <td>{{ $story->created_at}}</td>
                         <td>{{ $story->status}}</td>
                         <td>

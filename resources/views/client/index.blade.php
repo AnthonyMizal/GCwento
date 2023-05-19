@@ -49,7 +49,7 @@
             </div>
             <div class="story_block_details">
                 <h3 class="story_title dwhite_color">{{ $story->title}}</h3>
-                <p class="story_genre dwhite_color"> GENRE: Grilled, Balut</p>
+                <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
                 <p class="story_description">{{ $story->description}}</p>
                 <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
             </div>

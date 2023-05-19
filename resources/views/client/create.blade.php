@@ -14,6 +14,7 @@
             <form action="/stories" method="POST" enctype="multipart/form-data">
                 @csrf
                     <input type="text" name="user_id" class="form-control" value="{{auth()->user()->id}}" hidden>
+
                 <div class="mb-3">
                     <label class="input_label">Upload Cover</label>
                     <input type="file" name="cover" class="form-control upload_cover w-25 px-2 py-1 shadow-none border-1">
@@ -25,6 +26,19 @@
                     <input type="text" placeholder="Enter the story title here..." name="title" class="form-control form_input rounded-1 w-50 px-2 py-1">
                 </div>
                 
+                <div class="form-group">
+                    <label for="genres">Genres:</label>
+                    <br>
+                    @foreach($genres as $genre)
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="genres[]" value="{{ $genre->name }}" id="genre{{ $genre->id }}">
+                            <label class="form-check-label" for="genre{{ $genre->id }}">{{ $genre->name }}</label>
+                        </div>
+                    @endforeach
+                </div>
+
+            
+
                 <div class="mb-3">
                     <label class="input_label">Description</label>
                     <textarea name="description" placeholder="Enter the brief story description here..." class="form-control form_input rounded-1 px-2 py-1" rows="3" style="resize: none;"></textarea>

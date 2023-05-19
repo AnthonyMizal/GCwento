@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Story;
+use App\Models\Genre;
 
 
 /*
@@ -15,6 +16,8 @@ use App\Models\Story;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::post('genre/create', [App\Http\Controllers\GenreController::class, 'store']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

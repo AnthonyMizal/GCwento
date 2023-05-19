@@ -12,7 +12,7 @@
         </div>
         <div class="story_block_details">
             <h3 class="read_story_title dwhite_color">{{$story->title}}</h3>
-            <p class="read_story_genre dwhite_color"> GENRE: Grilled, Balut</p>
+            <p class="read_story_genre dwhite_color"> GENRE: {{ $story->genres}}</p>
             <p class="read_story_author">- {{ $story->user->username}}</p><br>  
 
 
