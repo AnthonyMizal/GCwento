@@ -30,12 +30,11 @@
 
 
 <body>
-
+    @auth
+        @include('includes.navbar')
+    @endauth
     
     <div class="container-fluid"> 
-        @auth
-        @include('includes.navbar')
-        @endauth
         @yield('content')
     </div>
 

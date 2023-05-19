@@ -14,7 +14,7 @@ body{
 
 .header_line{
     height: 2px;
-    width: 200px;
+    width: 200px !important;
     margin: 0 auto;
     margin-top: 20px;
     background-color: #ffe1bb;
@@ -168,8 +168,18 @@ footer{
     color: #ffe1bb;
 }
 
-.form_header_text{
+.form_header_text {
     font-family: 'montserrat-bold';
+    display: flex;
+    flex-direction: row;
+}
+
+.form_header_text:before,
+.form_header_text:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 2px solid #ffe1bb;
+    margin: auto;
 }
 
 .header_line{   
@@ -180,14 +190,29 @@ footer{
 .upload_cover{
     font-family: 'montserrat-medium';
     font-size: 15px;
-    border: 1px solid rgb(223, 223, 223);
+    background-color: #1b192eda;
+    border: none;
+    border-bottom: 1px solid #6946F6 !important;
+    color: rgb(102, 102, 102) !important;
+}
+
+.upload_cover:active, .upload_cover:focus{
+    background-color: #1b192eda;
+    color: #6946F6 !important;
+}
+
+.upload_cover::file-selector-button{
+    font-family: 'Montserrat-Medium';
+    background-color: #6946F6;
+    padding: 20px;
 }
 
 .form_input{
-    background-color: transparent;
+    background-color: #1b192eda;
     font-family: 'montserrat-light';
     color: white !important;
-    border: 1px solid white !important;
+    border: none;
+    border-bottom: 1px solid #6946F6 !important;
     overflow: hidden;
 }
 
@@ -207,6 +232,28 @@ footer{
 .submit_story_button:hover{
     background-color: #83208E;
 }
+
+.genre_checkbox{
+    background-color: #1b192eda;
+    border: 1px solid #6946F6;
+    padding: 10px !important;
+}
+
+.genre_checkbox_label{
+    margin-left: 6px;
+    font-family: 'Montserrat-Medium';
+    color: #FFE1BB;
+}
+
+.input_label{
+    font-size: 17px !important;
+}
+
+
+
+
+
+
 
 
 

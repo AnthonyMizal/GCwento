@@ -74,58 +74,7 @@
                   </div>
                 </div>
 
-                <h2 class="tab_rated_stories_header"> TOP RATED <span class="purple_highlighter"> STORIES </span></h2>
-
-                <div class="top_rated_stories_table_container">
-                  <table class="table table-hover top_rated_stories_table table-borderless">
-                    <thead class="thead-light top_rated_stories_table_header">
-                      <tr>
-                        <th scope="col" class="py-4 top_left_header col-2">RANK</th>
-                        <th scope="col" class="py-4 col-2">STARS</th>
-                        <th scope="col" class="py-4 col-3" >TITLE</th>
-                        <th scope="col" class="py-4 col-3">GENRE</th>
-                        <th scope="col" class="py-4 top_right_header col-2">AUTHOR</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row" class="purple_highlighter"> 1 </th>
-                        <td> 69 </td>
-                        <td> Kalampag ng Papag </td>
-                        <td> Horror, Romance, Thriller, Comedy </td>
-                        <td> diakosianthony </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" class="purple_highlighter"> 2 </th>
-                        <td> 55 </td>
-                        <td> Orbiter </td>
-                        <td> Romance </td>
-                        <td> akotosithea </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" class="purple_highlighter"> 3 </th>
-                        <td> 33 </td>
-                        <td> Laravel </td>
-                        <td> Horror </td>
-                        <td> kim </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" class="purple_highlighter"> 4 </th>
-                        <td> 30 </td>
-                        <td> Hatdog ni Aljur </td>
-                        <td> Romance </td>
-                        <td> nathoy21 </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" class="purple_highlighter"> 5 </th>
-                        <td> 21 </td>
-                        <td> Finding Osama </td>
-                        <td> Action </td>
-                        <td> Osama Binladen </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+              
             
           </div>
         

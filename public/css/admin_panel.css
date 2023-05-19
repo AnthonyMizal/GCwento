@@ -127,12 +127,6 @@
     align-items: center;
 }
 
-.tabs_list_container a:nth-of-type(1){
-    color: white;
-    background-color: #6946F6;
-    border: #422c9b;
-}
-
 @media (max-width: 1700px){
     .panel_board_count{
         font-size: 70px;
