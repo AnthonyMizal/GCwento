@@ -10,7 +10,6 @@
     
         <div class="card_header_container">
             <h3 class="text-center form_header_text"> FAVORITES </h3>
-            <div class="header_line"></div>
         </div>
 
         <div class="row d-flex flex-row my-4">
@@ -21,7 +20,7 @@
             @foreach ($favorites as $favorite)
             {{-- Individual Favorite Story Blocks --}}
             <a href="/story/{{$favorite->story->id}}">
-                <div class="col-2 fav_story_item_container m-1 rounded-4 pt-3 px-2 d-flex flex-column justify-content-center align-items-center">
+                <div class="col-2 fav_story_item_container m-1 rounded-4 pt-3 px-2 d-flex flex-column align-items-center">
                     <div class="d-flex">
                         <img class="fav_cover_img img-fluid" src="{{asset('/storage/img/'.$favorite->story->cover)}}"/>
                         <a href=""></a>

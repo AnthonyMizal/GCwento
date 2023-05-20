@@ -13,13 +13,13 @@
       <li ><a href="/stories/index" class="tabs nav-link px-4">READ</a></li>
   </ul>
   
-  <div class=" col-2 text-end">
+  <div class="col-2">
     @auth
     <li class="nav-item dropdown" style="list-style-type: none;">
       <a class="nav-link dropdown-toggle btn border border-2 px-3 py-2 rounded-1 text-white login_button" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         Welcome {{auth()->user()->fullname}}!
       </a>
-      <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+      <ul class="dropdown-menu w-100 text-center" aria-labelledby="navbarDropdown">
         <li><a class="dropdown-item px-3 py-2 rounded-1 text_button" href="/myprofile/{{auth()->user()->id}}">Edit Profile</a></li>
         <li><a class="dropdown-item px-3 py-2 rounded-1 text_button" href="/favorites">Favorites</a></li>
         <li><a class="dropdown-item px-3 py-2 rounded-1 text_button" href="/mystories">My Stories</a></li>

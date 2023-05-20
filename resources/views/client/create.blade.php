@@ -30,11 +30,11 @@
                     <label for="genres" class="input_label">Genres:</label>
                     <br>
                     
-                    <div class="d-flex justify-content-center align-items-center">
+                    <div class="d-flex align-items-center">
                         @foreach($genres as $genre)
                             <div class="form-check px-4 d-flex justify-content-center align-items-center">
                                 <input class="form-check-input genre_checkbox" type="checkbox" name="genres[]" value="{{ $genre->name }}" id="genre{{ $genre->id }}">
-                                <label class="form-check-label genre_checkbox_label" for="genre{{ $genre->id }}">{{ $genre->name }}</label>
+                                <label class="form-check-label genre_checkbox_label mt-1" for="genre{{ $genre->id }}">{{ $genre->name }}</label>
                             </div>
                         @endforeach
                     </div>

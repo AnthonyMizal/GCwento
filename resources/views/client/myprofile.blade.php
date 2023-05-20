@@ -1,5 +1,5 @@
 @extends('layout.client')
-@section('pageTitle', 'Favorites')
+@section('pageTitle', 'My Profile')
 
 @section('client_cont')
 
@@ -7,10 +7,9 @@
     <div class="whole_container rounded-3 py-4 px-5 mt-4">
         <div class="card_header_container">
             <h3 class="text-center form_header_text"> ACCOUNT MANAGEMENT </h3>
-            <div class="header_line"></div>
         </div>
 
-        <div class="w-75 my-4 mx-auto d-flex flex-column">
+        <div class="w-75 my-3 mx-auto d-flex flex-column">
             <div class="d-flex justify-content-end">
                 <div class="act_overview_container rounded-2 d-flex flex-column justify-content-center align-items-center px-2 py-4 bg-white">
                     <div class="act_overview_header_container">
@@ -62,7 +61,7 @@
 
             </div>
 
-            <div class="d-flex justify-content-center mt-3 mb-4">
+            <div class="d-flex justify-content-center mt-3">
                 <button class="col-4 profile_save_button border-0 rounded-5 py-3" type="submit"> SAVE </button>
             </div>
         </form>

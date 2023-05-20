@@ -1,5 +1,5 @@
 @extends('layout.client')
-@section('pageTitle', 'Favorites')
+@section('pageTitle', 'My Stories')
 
 @section('client_cont')
 
@@ -9,7 +9,6 @@
     
         <div class="card_header_container">
             <h3 class="text-center form_header_text"> MY STORIES </h3>
-            <div class="header_line"></div>
         </div>
 
         <div class="row d-flex flex-row mx-1 my-4">
@@ -44,12 +43,12 @@
             <table id="mystories_table_contents" class="table table-dark mystories_table">
                 <thead>
                   <tr>
-                    <th scope="col" class="table_top_left">COVER PHOTO</th>
-                    <th scope="col">TITLE</th>
-                    <th scope="col">GENRE</th>
-                    <th scope="col">DATE CREATED</th>
-                    <th scope="col">STATUS</th>
-                    <th scope="col" class="table_top_right">ACTIONS</th>
+                    <th scope="col-1" class="table_top_left">PHOTO</th>
+                    <th scope="col-4">TITLE</th>
+                    <th scope="col-4">GENRE</th>
+                    <th scope="col-1">CREATED</th>
+                    <th scope="col-1">STATUS</th>
+                    <th scope="col-1" class="table_top_right">ACTIONS</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -68,7 +67,7 @@
                                 @csrf
                                 @method('DELETE')
     
-                                <button type="submit" class="mystories_delete_button text-decoration-none px-3 py-1 rounded-1">DELETE</button>
+                                <button type="submit" class="mystories_delete_button border-0 text-decoration-none px-3 py-1 rounded-1">DELETE</button>
                             </form>
                         </td>
                     </tr>
