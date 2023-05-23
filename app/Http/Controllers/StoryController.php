@@ -200,8 +200,8 @@ class StoryController extends Controller
 
     public function adminPublishedCount(){
         $pendingCount = Story::where('status', 'Pending')->count();
-        $publishedCount = Story::where('status', 'Published')->count();
-        $rejectedCount = Story::where('status', 'Rejected')->count();
+        $publishedCount = Story::where('status', 'Publish')->count();
+        $rejectedCount = Story::where('status', 'Reject')->count();
         return view('admin.index', compact('publishedCount', 'pendingCount', 'rejectedCount'));
     }
 
@@ -228,6 +228,13 @@ class StoryController extends Controller
         return $stories;
         // return $stories;
     }
+
+    public function updateStoryStatus(Request $request, Story $story)
+{
+    $story->update(['status' => $request->input('status')]);
+
+    return redirect('/admin/stories');
+}
 
 
 }

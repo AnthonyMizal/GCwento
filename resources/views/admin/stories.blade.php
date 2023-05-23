@@ -14,11 +14,11 @@
                 <input id="search_input" type="text" class="search_input" placeholder="Search user here...">
               </div>
               <div class="col-3 filter-group dropdown_filter_container">
-                <select class="form-control table_drop_down" id="table_category_list">
-                  <option value="all"> All </option>
-                  <option value="pending"> Pending </option>
-                  <option value="published"> Published </option>
-                  <option value="rejected"> Rejected </option>
+                <select class="form-control table_drop_down" id="categoryFilter">
+                  <option value=""> All </option>
+                  <option value="Pending"> Pending </option>
+                  <option value="Published"> Published </option>
+                  <option value="Rejected"> Rejected </option>
                 </select>
                 <i class="fa fa-filter filter_icon"></i>
               </div>
@@ -45,12 +45,17 @@
                       <td>{{$story->user->fullname}}</td>
                       <td class="table_item_status_td"> 
                         <div class="table_item_status_dropdown_container">
-                          <select class="form-control table_item_status_dropdown" id="table_item_status">
-                            <option value="pending"> Pending </option>
-                            <option value="publish"> Publish </option>
-                            <option value="reject"> Reject </option>
+                          <form action="{{ route('stories.updateStoryStatus', $story) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                          <select class="form-control table_item_status_dropdown" name="status" id="table_item_status">
+                            <option value="Pending" {{$story->status == 'Pending' ? 'selected' : ''}}> Pending </option>
+                            <option value="Publish" {{$story->status == 'Publish' ? 'selected' : ''}}> Publish </option>
+                            <option value="Reject" {{$story->status == 'Reject' ? 'selected' : ''}}> Reject </option>
                           </select>
                           <i class="fa fa-filter filter_icon"></i>
+                          <button type="submit" class="btn btn-link">Save</button>
+                          </form>
                         </div>
                       </td>
                       <td> 

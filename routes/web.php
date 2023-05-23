@@ -65,6 +65,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::post('stories/comment', 'CommentController@store')->name('comment.add');
     
     Route::get('get/comment', 'CommentController@index')->name('comment.index');
+    
+    Route::patch('stories/{story}', 'StoryController@updateStoryStatus')->name('stories.updateStoryStatus');
     // Route::get('favorites', 'FavoriteController@index')->name('favorite.index');
 });
 
@@ -86,4 +88,6 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('myprofile/{id}', [App\Http\Controllers\RegisterController::class, 'edit']);
     Route::patch('myprofile/{id}', [App\Http\Controllers\RegisterController::class, 'update']);
+
+
 });
