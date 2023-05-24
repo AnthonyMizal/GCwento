@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}" >
 </head>
 
-{{-- Updated May 25, 2023 - Frontend --}}
+{{-- Updated May 25, 2023 - Frontend 2.0 --}}
 
 <body>
     @include('includes.usernav')
@@ -67,8 +67,11 @@
                 <div class="about_us_contents col-5 d-flex flex-column justify-content-center">
                     <h3 class="text-end"> What is GCwento </h3>
                     <h1 class="welc_header_perSec text-end dwhite_color"> ABOUT US </h1>
-                    <p class="welc_cont_perSec text-justify"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimv eniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimv eniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                    <p class="welc_cont_perSec text-justify"> GCwento is a social reading platform that helps Gordon College readers and writers connect online.The purpose of GCwento is to nurture an interest in storytelling, improve writing abilities, and stimulate students' imaginations. <br><br>
+                        
+                        By providing a collaborative and interactive place for stories, the project encourages students to develop a deep appreciation for the art of storytelling.<br><br>
+                        
+                        GCwento is an innovative project created to motivate and involve students in the storytelling process. Students can work together to collaboratively write, share, and publish their own stories on this digital platform, developing their creativity, writing ability, and storytelling skills. </p>
                 </div>
             </div>    
 
@@ -88,7 +91,7 @@
                             <img class="serv_icon" src="../assets/General/serv_book.png">
                         </div>
 
-                        <p class="welc_cont_perSec">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimv eniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>  
+                        <p class="welc_cont_perSec">The GCwento project provides a wide range of reading services that are exclusively designed for Gordon College students with the goal of developing a love for reading and assisting students' academic development. This online resource gives users access to a wide range of stories as well as tools and resources to improve the reading experience.</p>  
                     </div>
 
                     <div class="col-4 p-5 d-flex flex-column justify-content-center">
@@ -96,7 +99,7 @@
                             <img class="serv_icon" src="../assets/General/serv_copy.png">
                         </div>   
 
-                        <p class="welc_cont_perSec">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimv eniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>  
+                        <p class="welc_cont_perSec">With the aim of developing creativity, improving writing abilities, and educating students to become confident storytellers, the GCwento project offers a comprehensive suite of writing services. The creation and publication of stories are made easier by the resources, tools, and support offered by this digital platform.</p>  
                     </div>
                 </div>
             </div>
