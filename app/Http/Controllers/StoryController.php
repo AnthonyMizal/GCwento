@@ -6,6 +6,7 @@ use App\Models\Story;
 use App\Models\Comment;
 use App\Models\Favorite;
 use App\Models\Genre;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class StoryController extends Controller
@@ -26,16 +27,18 @@ class StoryController extends Controller
     $keyword = $request->input('search');
     $dropDown = $request->input('genre');
 
-    $query = Story::with('user');
+    $query = Story::with('user')->where('status', 'Publish');
 
     if ($keyword) {
         $query->where('title', 'like', '%'.$keyword.'%')
-        ->orWhere('genres', 'like', '%'.$keyword.'%');
+        ->orWhere('genres', 'like', '%'.$keyword.'%')
+        ->where('status', 'Publish');
     };
 
     if ($dropDown) {
         $query->where('title', 'like', '%'.$dropDown.'%')
-        ->orWhere('genres', 'like', '%'.$dropDown.'%');
+        ->orWhere('genres', 'like', '%'.$dropDown.'%')
+        ->where('status', 'Publish');
     };
 
     $stories = $query->get();
@@ -202,7 +205,8 @@ class StoryController extends Controller
         $pendingCount = Story::where('status', 'Pending')->count();
         $publishedCount = Story::where('status', 'Publish')->count();
         $rejectedCount = Story::where('status', 'Reject')->count();
-        return view('admin.index', compact('publishedCount', 'pendingCount', 'rejectedCount'));
+        $userCount = User::all()->count();
+        return view('admin.index', compact('publishedCount', 'pendingCount', 'rejectedCount', 'userCount'));
     }
 
     public function adminStories()

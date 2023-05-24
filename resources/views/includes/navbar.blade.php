@@ -15,7 +15,6 @@
           <a href="/admin/index" class="nav_item_button"> <i class='bx bxs-dashboard'></i> PANEL </a>
           <a href="/admin/users" class="nav_item_button"> <i class='bx bxs-user'></i> USERS </a>
           <a href="/admin/stories" class="nav_item_button"> <i class='bx bxs-book'></i> STORIES </a>
-          <a href="/admin/banning" class="nav_item_button"> <i class='bx bxs-hand'></i> BANNING </a>
 
 
         </div>

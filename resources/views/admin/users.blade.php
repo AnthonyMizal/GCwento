@@ -12,7 +12,7 @@
 
           <div class="col-3 search_input_field">
             <i class="m-3 fa fa-search search_icon"></i>
-            <input id="search_input" type="text" class="search_input" placeholder="Search user here...">
+            <input id="search_input_user" type="text" class="search_input" placeholder="Search user here...">
           </div>
 
           <div class="row page_contents_container">
@@ -27,16 +27,21 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($users as $user)
                   <tr>
-                    <td>  akotosinathoy21 </td>
-                    <td> Nathaniel E. Ribada </td>
-                    <td> 202011038@gmail.com </td>
+                    <td> {{$user->username}} </td>
+                    <td> {{$user->fullname}} </td>
+                    <td> {{$user->email}} </td>
                     <td> 
-                      <button type="button" id="account_details_button" class="btn action_button_ddark_blue"> VIEW </button>
-                      <button type="button" id="ban_button" class="btn action_button_red" > BAN </button>
+                      <button type="button" id="user_details_button" class="btn action_button_ddark_blue" onclick="getUserDetails({{$user->id}})"> VIEW </button>
+                      @if ($user->status === 'Active')
+                        <button type="button" class="status-button btn action_button_red" data-user-id="{{ $user->id }}" data-status="Banned">BAN</button>
+                      @else
+                        <button type="button" class="status-button btn action_button_green" data-user-id="{{ $user->id }}" data-status="Active">UNBAN</button>
+                      @endif
                     </td>
                   </tr>      
-                 
+                 @endforeach
                 </tbody>
               </table>
             </div>
@@ -66,7 +71,7 @@
           </div>
         </div>
 
-        <div id="account_details_modal" class="modal">
+        <div id="user_details_modal" class="modal">
           <div class="modal-content account_details_modal_content">
               <div class="modalHeader">
                 <div class="modal_header_container">
@@ -78,9 +83,7 @@
   
               <div id="modal_body">
                 <div class="account_detail_modal_row1">
-                  <div class="row_left">
-                    <img class="modal_user_dp" src="../assets/General/user_pic.jpg" id="modal_user_dp">
-                  </div>
+
                   <div class="row_right">
                     <h3 class="modal_body_heading">Personal Information</h3>
                     <div class="modal_header_line"></div>
@@ -88,12 +91,9 @@
                     <div class="modal_personal_info_container mt-1 d-flex justify-content-between">
                       <div class="sec1 col-6">
                         <label for="modal_account_name" class="modal_account_label"> Full Name </label>
-                        <p id="modal_account_name" name="modal_account_name"> Nathaniel E. Ribada </p>
+                        <p id="modal_account_name" name="modal_account_name"> </p>
                       </div>
-                      <div class="sec2 col-6 text-end" >
-                        <label for="modal_account_sex" class="modal_account_label float-right"> Sex </label>
-                        <p id="modal_account_sex" name="modal_account_sex"> Male </p>
-                      </div>
+
                     </div>
 
                     <h3 class="modal_body_heading">Account Information</h3>
@@ -102,18 +102,28 @@
                     <div class="modal_personal_info_container mt-1 d-flex justify-content-between">
                       <div class="sec1 col-6">
                         <label for="modal_account_email" class="modal_account_label"> Email </label>
-                        <p id="modal_account_email" name="modal_account_email"> 202011038@gordoncollege.edu.ph </p>
+                        <p id="modal_account_email" name="modal_account_email"></p>
                         <label for="modal_account_created" class="modal_account_label"> Created at </label>
-                        <p id="modal_account_created" name="modal_account_created"> 06-15-2023 </p>
+                        <p id="modal_account_created" name="modal_account_created"></p>
                       </div>
                       <div class="sec2 col-6 text-end">
                         <label for="modal_account_penname" class="modal_account_label float-right"> Pen Name </label>
-                        <p id="modal_account_penname" name="modal_account_penname"> akotosinathoy21 </p>
-                        <label for="modal_account_story_count" class="modal_account_label float-right"> Published Stories </label>
-                        <p id="modal_account_story_count" name="modal_account_story_count"> 21 </p>
+                        <p id="modal_account_penname" name="modal_account_penname"></p>
+                        
                       </div>
+                     
                     </div>
 
+                    <h3 class="modal_body_heading">Stories Created Count</h3>
+                    <div class="modal_header_line"></div>
+                    <div class="d-flex justify-content-between">
+                      <label for="modal_account_story_count" class="modal_account_label "> Pending Stories </label>
+                      <p id="modal_account_pending_count" name="modal_account_story_count"></p>
+                      <label for="modal_account_story_count" class="modal_account_label "> Published Stories </label>
+                      <p id="modal_account_story_count" name="modal_account_story_count"></p>
+                      <label for="modal_account_story_count" class="modal_account_label "> Rejected Stories </label>
+                      <p id="modal_account_reject_count" name="modal_account_story_count"></p>
+                    </div>
                   </div>
                 </div>
                 <button type="button" id="close_modal" class="btn modal_pos_button d-flex float-end m-0"> OKAY </button>  
@@ -127,4 +137,8 @@
       </div>
     </div>
 
+@endsection
+
+@section('js')
+<script src="{{ asset('js/admin_users.js') }}"></script>
 @endsection

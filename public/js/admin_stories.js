@@ -84,7 +84,7 @@ function getUserStory(storyID) {
       },
       error: function(xhr, status, error) {
           // Handle the error, e.g., display an error message
-          console.log("ayaw");
+
       }
   });
 }

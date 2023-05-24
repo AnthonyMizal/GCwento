@@ -16,7 +16,7 @@
               <div class="panel_header_container">
                   <div class="row panel_header_row">
                     <div class="col-xl-5 col-xxl-5 tab_header_texts_container">
-                      <p class="tab_header_account_name"> WELCOME, <span class="purple_highlighter"> ADMIN1!</span></p>
+                      <p class="tab_header_account_name"> WELCOME, <span class="purple_highlighter">{{auth()->user()->fullname}}</span></p>
                       <div class="time_container">
                         <!-- <i class='bx bxs-calendar time_icon' id="time_icon"></i> -->
                         <h3 id="time" class="time_text"></h3>
@@ -66,7 +66,7 @@
                 <div class="panel_board_container">
                   <div class="row panel_board_icon_count_container">
                     <img class="panel_board_icon" src="../assets/Admin/Panel/circled_lockuser_icon.png" alt="">
-                    <h1 class="panel_board_count purple_highlighter"> 2 </h1>
+                    <h1 class="panel_board_count purple_highlighter">{{$userCount-1}}</h1>
                   </div>
                   <div class="panel_board_title_icon_container">
                     <h4 class="panel_board_title mt-3">User Accounts</h4>

@@ -125,5 +125,11 @@
 {{-- 
     <div class="loader-wrapper">
       <img class="loader" src="../assets/General/GCwento_purple_logo.png">
+    
     </div> --}}
+
+@endsection
+
+@section('js')
+<script src="{{ asset('js/admin_stories.js') }}"></script>
 @endsection

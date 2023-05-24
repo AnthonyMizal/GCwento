@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Story;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,6 +12,41 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function adminUserDetails($id)
+     {
+         $users = User::where('id', $id)->get();
+
+         return response()->json($users);
+     }
+
+     public function adminUserPendingCount($id)
+     {
+        $pending = Story::where('status', 'Pending')
+        ->where('user_id', $id)
+        ->count();
+
+        return response()->json($pending);
+     }
+
+     public function adminUserPublishCount($id)
+     {
+        $publish = Story::where('status', 'Publish')
+        ->where('user_id', $id)
+        ->count();
+
+        return response()->json($publish);
+     }
+
+     public function adminUserRejectCount($id)
+     {
+        $reject = Story::where('status', 'Reject')
+        ->where('user_id', $id)
+        ->count();
+
+        return response()->json($reject);
+     }
+
     public function index()
     {
         return view('client.login');
@@ -18,7 +54,16 @@ class UserController extends Controller
 
     public function userAdminTable()
     {
-        return view('admin.users');
+        $users = User::all();
+        return view('admin.users', compact('users'));
+    }
+
+
+    public function updateStatus(Request $request, User $user)
+    {
+        $user->update(['status' => $request->input('status')]);
+    
+        return response()->json(['message' => 'User status updated successfully']);
     }
 
     /**

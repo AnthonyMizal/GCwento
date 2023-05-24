@@ -44,6 +44,10 @@ Route::get('getStory', [App\Http\Controllers\StoryController::class, 'adminGetSt
 Route::get('admin/stories', [App\Http\Controllers\StoryController::class, 'adminStories']);
 Route::get('admin/index', [App\Http\Controllers\StoryController::class, 'adminPublishedCount']);
 Route::get('user/story/{id}', [App\Http\Controllers\StoryController::class, 'adminUserStories']);
+Route::get('user/detail/{id}', [App\Http\Controllers\UserController::class, 'adminUserDetails']);
+Route::get('user/publishCount/{id}', [App\Http\Controllers\UserController::class, 'adminUserPublishCount']);
+Route::get('user/rejectCount/{id}', [App\Http\Controllers\UserController::class, 'adminUserRejectCount']);
+Route::get('user/pendingCount/{id}', [App\Http\Controllers\UserController::class, 'adminUserPendingCount']);
 // Client
 
 
@@ -59,7 +63,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::get('/login/admin', 'LoginController@showAdmin')->name('login.showAdmin');
 
 
-
+    Route::patch('users/{user}', 'UserController@updateStatus')->name('users.updateStatus');
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
     Route::post('stories/comment', 'CommentController@store')->name('comment.add');
