@@ -51,6 +51,69 @@ function getMyStories() {
       
 }
 
+function confirmDelete(storyId) {
+  Swal.fire({
+    title: 'Confirmation',
+    text: 'Are you sure you want to delete this story?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Delete',
+    cancelButtonText: 'Cancel',
+    confirmButtonColor: '#d33',
+    cancelButtonColor: '#3085d6',
+    background: '#222222',
+    color: '#FFE1BB',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      deleteStory(storyId);
+    }
+  });
+}
+
+function deleteStory(storyId) {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+  $.ajax({
+    url: '/stories/index/' + storyId,
+    type: 'POST',
+    data: {
+      _method: 'DELETE'
+    },
+    success: function(response) {
+      console.log(response.message); // Handle the success response as per your requirements
+      Swal.fire({
+        title: 'Deleted!',
+        text: 'The story has been deleted successfully.',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#4BB1F7',
+        color: '#FFE1BB',
+        background: '#222222',
+        iconColor: '#5535d4',
+      }).then((result) => {
+        // Reload the page or perform any other desired action
+        location.reload();
+      });
+    },
+    error: function(xhr, status, error) {
+      console.error(error); // Handle the error response as per your requirements
+      Swal.fire({
+        title: 'Error',
+        text: 'Failed to delete the story.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#FF5D5D',
+        color: '#FFE1BB',
+        background: '#222222',
+        iconColor: '#5535d4',
+      });
+    }
+  });
+}
+
 $('.logout-button').on('click', function() {
   Swal.fire({
     title: 'Confirmation',

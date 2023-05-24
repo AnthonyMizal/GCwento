@@ -63,11 +63,11 @@
                         <td>{{ $story->status}}</td>
                         <td>
                             <a href=""></a>
-                            <form action="/stories/index/{{$story->id}}" method="POST">
+                            <form data-story-id="{{$story->id}}" id="deleteStoryForm" method="POST">
                                 @csrf
                                 @method('DELETE')
     
-                                <button type="submit" class="mystories_delete_button border-0 text-decoration-none px-3 py-1 rounded-1">DELETE</button>
+                                <button type="button" class="mystories_delete_button border-0 text-decoration-none px-3 py-1 rounded-1" onclick="confirmDelete({{$story->id}})">DELETE</button>
                             </form>
                         </td>
                     </tr>
