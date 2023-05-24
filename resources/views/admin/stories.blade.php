@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('pageTitle', 'Admin Stories')
+
 @section('content')
     <div class="container-fluid">
       <div class="row">
@@ -44,17 +46,17 @@
                       <td> Action </td>
                       <td>{{$story->user->fullname}}</td>
                       <td class="table_item_status_td"> 
-                        <div class="table_item_status_dropdown_container">
-                          <form action="{{ route('stories.updateStoryStatus', $story) }}" method="POST">
+                        <div class="table_item_status_dropdown_container w-75 text-center d-flex justify-content-center">
+                          <form action="{{ route('stories.updateStoryStatus', $story) }}" method="POST" class="d-flex">
                             @csrf
                             @method('PATCH')
-                          <select class="form-control table_item_status_dropdown" name="status" id="table_item_status">
-                            <option value="Pending" {{$story->status == 'Pending' ? 'selected' : ''}}> Pending </option>
-                            <option value="Publish" {{$story->status == 'Publish' ? 'selected' : ''}}> Publish </option>
-                            <option value="Reject" {{$story->status == 'Reject' ? 'selected' : ''}}> Reject </option>
-                          </select>
-                          <i class="fa fa-filter filter_icon"></i>
-                          <button type="submit" class="btn btn-link">Save</button>
+                            <select class="form-control table_item_status_dropdown" name="status" id="table_item_status">
+                              <option value="Pending" {{$story->status == 'Pending' ? 'selected' : ''}}> Pending </option>
+                              <option value="Publish" {{$story->status == 'Publish' ? 'selected' : ''}}> Publish </option>
+                              <option value="Reject" {{$story->status == 'Reject' ? 'selected' : ''}}> Reject </option>
+                            </select>
+                            
+                            <button type="submit" class="btn btn-link"><i class="fa fa-save filter_icon"></i></button>
                           </form>
                         </div>
                       </td>

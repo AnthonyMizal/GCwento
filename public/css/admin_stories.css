@@ -13,6 +13,10 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.story_modal::-webkit-scrollbar {
+    display: none;
+ }
+
 /* Modal Content/Box */
 .story_modal_content {
     margin: 2% auto; /* 15% from the top and centered */

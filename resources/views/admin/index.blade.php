@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('pageTitle', 'Admin Panel')
+
 @section('content')
     <div class="container-fluid">
 
@@ -37,7 +39,7 @@
                   </div>
                   <div class="panel_board_title_icon_container">
                     <h4 class="panel_board_title mt-3">Pending Stories</h4>
-                    <a href="../html/admin_stories.html"><i class="m-3 fa fa-info-circle panel_board_info_icon"></i></a>
+                    <a href="/admin/stories"><i class="m-3 fa fa-info-circle panel_board_info_icon"></i></a>
                   </div>
                 </div>
 
@@ -48,7 +50,7 @@
                   </div>
                   <div class="panel_board_title_icon_container">
                     <h4 class="panel_board_title mt-3">Published Stories</h4>
-                    <a href="../html/admin_users.html"><i class="m-3 fa fa-info-circle panel_board_info_icon"></i></a>
+                    <a href="/admin/stories"><i class="m-3 fa fa-info-circle panel_board_info_icon"></i></a>
                   </div>
                 </div>
 
@@ -59,7 +61,7 @@
                   </div>
                   <div class="panel_board_title_icon_container">
                     <h4 class="panel_board_title mt-3">Rejected Stories</h4>
-                    <a href="../html/admin_banning.html"><i class="m-3 fa fa-info-circle panel_board_info_icon"></i></a>
+                    <a href="/admin/stories"><i class="m-3 fa fa-info-circle panel_board_info_icon"></i></a>
                   </div>
                 </div>
 
@@ -70,7 +72,7 @@
                   </div>
                   <div class="panel_board_title_icon_container">
                     <h4 class="panel_board_title mt-3">User Accounts</h4>
-                    <a href="../html/admin_banning.html"><i class="m-3 fa fa-info-circle panel_board_info_icon"></i></a>
+                    <a href="/admin/users"><i class="m-3 fa fa-info-circle panel_board_info_icon"></i></a>
                   </div>
                 </div>
 

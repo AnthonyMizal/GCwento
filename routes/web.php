@@ -50,6 +50,8 @@ Route::get('user/rejectCount/{id}', [App\Http\Controllers\UserController::class,
 Route::get('user/pendingCount/{id}', [App\Http\Controllers\UserController::class, 'adminUserPendingCount']);
 // Client
 
+Route::get('register/termsandconditions', [App\Http\Controllers\RegisterController::class, 'termsAndConditions']);
+
 
 // Route::get('login', [App\Http\Controllers\UserController::class, 'index']);
 

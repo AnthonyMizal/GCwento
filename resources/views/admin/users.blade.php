@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('pageTitle', 'Admin Users')
+
 @section('content')
     <div class="container-fluid">
 
@@ -33,11 +35,11 @@
                     <td> {{$user->fullname}} </td>
                     <td> {{$user->email}} </td>
                     <td> 
-                      <button type="button" id="user_details_button" class="btn action_button_ddark_blue" onclick="getUserDetails({{$user->id}})"> VIEW </button>
+                      <button type="button" id="user_details_button" class="btn action_button_ddark_blue action_button" onclick="getUserDetails({{$user->id}})"> VIEW </button>
                       @if ($user->status === 'Active')
-                        <button type="button" class="status-button btn action_button_red" data-user-id="{{ $user->id }}" data-status="Banned">BAN</button>
+                        <button type="button" class="status-button btn action_button_red action_button" data-user-id="{{ $user->id }}" data-status="Banned">BAN</button>
                       @else
-                        <button type="button" class="status-button btn action_button_green" data-user-id="{{ $user->id }}" data-status="Active">UNBAN</button>
+                        <button type="button" class="status-button btn action_button_green action_button" data-user-id="{{ $user->id }}" data-status="Active">UNBAN</button>
                       @endif
                     </td>
                   </tr>      
@@ -116,17 +118,26 @@
 
                     <h3 class="modal_body_heading">Stories Created Count</h3>
                     <div class="modal_header_line"></div>
-                    <div class="d-flex justify-content-between">
-                      <label for="modal_account_story_count" class="modal_account_label "> Pending Stories </label>
-                      <p id="modal_account_pending_count" name="modal_account_story_count"></p>
-                      <label for="modal_account_story_count" class="modal_account_label "> Published Stories </label>
-                      <p id="modal_account_story_count" name="modal_account_story_count"></p>
-                      <label for="modal_account_story_count" class="modal_account_label "> Rejected Stories </label>
-                      <p id="modal_account_reject_count" name="modal_account_story_count"></p>
+                    <div class="d-flex justify-content-between mt-2">
+                      <div class="modal_user_act_counter_container col border rounded-2 mx-1 d-flex justify-content-center align-items-center py-2">
+                        <label for="modal_account_story_count" class="modal_account_label text-gray"> Pending Stories </label>
+                        <p id="modal_account_pending_count" name="modal_account_story_count" class="modal_account_details_counter"></p>
+                      </div>
+
+                      <div class="modal_user_act_counter_container col border rounded-2 mx-1 d-flex justify-content-center align-items-center py-2">
+                        <label for="modal_account_story_count" class="modal_account_label text-success"> Published Stories </label>
+                        <p id="modal_account_story_count" name="modal_account_story_count" class="modal_account_details_counter"></p>
+                      </div>
+
+                      <div class="modal_user_act_counter_container col border rounded-2 mx-1 d-flex justify-content-center align-items-center py-2">
+                        <label for="modal_account_story_count" class="modal_account_label text-danger"> Rejected Stories </label>
+                        <p id="modal_account_reject_count" name="modal_account_story_count" class="modal_account_details_counter"></p>
+                      </div>
+
                     </div>
                   </div>
                 </div>
-                <button type="button" id="close_modal" class="btn modal_pos_button d-flex float-end m-0"> OKAY </button>  
+                <button type="button" id="close_modal" class="btn modal_pos_button d-flex float-end mt-4"> OKAY </button>  
               </div>
              
           </div>

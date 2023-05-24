@@ -56,12 +56,17 @@
                                         <span class="text-danger text-left">{{ $errors->first('password_confirmation') }}</span>
                                         @endif
                                         <hr class="mb-4">
-                                    
-                                        <div class="mt-3 mb-4">
-                                            <button class="col-12 rounded-2 login_reg_button" type="submit"> REGISTER </button>
-                                        </div>
 
-                                        <h6 class="form-text text-muted mx-auto normal_text text-center"> Already have an account? <a class="text-primary bpurple_highlighter bold_highlighter text-decoration-none" href="{{ route('login.show') }}"> LOGIN </a> </h6>
+                                        <div class="form-check" class="mt-3 mb-4">
+                                            <input class="form-check-input shadow-none reg_checkbox" type="checkbox" value="" id="flexCheckDefault" required>
+                                            <h6 class="form-check-label" for="flexCheckDefault">
+                                              By registering your account, you are agreeing to our <a href="/register/termsandconditions" class="bpurple_highlighter bold_highlighter text-decoration-none"> TERMS AND CONDITIONS.</a>
+                                            </h6>
+                                            <button class="col-12 rounded-2 login_reg_button mt-3" type="submit"> REGISTER </button>
+                                        </div>
+                                    
+
+                                        <h6 class="form-text text-muted mx-auto normal_text text-center mt-3"> Already have an account? <a class="text-primary bpurple_highlighter bold_highlighter text-decoration-none" href="{{ route('login.show') }}"> LOGIN </a> </h6>
                                     </form>
                                 </div>
                             </div>

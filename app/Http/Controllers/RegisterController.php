@@ -44,4 +44,10 @@ class RegisterController extends Controller
         return redirect('stories/index');
     }
 
+    public function termsAndConditions(){
+
+        return view('auth.terms');
+    }
+
+
 }

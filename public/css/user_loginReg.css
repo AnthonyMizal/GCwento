@@ -13,6 +13,7 @@ body{
     font-family: 'montserrat-bold' !important;
     font-size: 20px !important;
     color: white !important;
+    margin-left: -10px;
 }
 
 .login_reg_button:hover{
@@ -35,4 +36,77 @@ body{
 .card_whole_container{
     border: 1px solid rgb(36, 36, 36) !important;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0), 0 2px 5px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+
+
+/* Terms and Conditions */
+.terms_conditions_container{
+
+}
+
+.tac_header_logo{
+    width: 100px;
+}
+
+.form_header_text {
+    font-family: 'montserrat-bold';
+    display: flex;
+    flex-direction: row;
+    color: #6946F6;
+}
+
+.form_header_text:before{
+    content: "";
+    flex: 1 1;
+    border-bottom: 2px solid #6946F6;
+    margin: auto;
+    margin-right: 7px;
+}
+
+.form_header_text:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 2px solid #6946F6;
+    margin: auto;
+    margin-left: 7px;
+}
+
+.notice_item{
+    background-color: #1E1B3F;
+}
+
+.notice_icon{
+    font-size: 50px !important;
+    border: 2px solid #6946F6;
+}
+
+.notice_details{
+    color: #6946F6;
+    font-family: 'Montserrat-Bold';
+    margin-left: 40px;
+    padding-top: 10px !important;
+}
+
+.notice_content{
+    color: white;
+    font-family: 'Montserrat-Regular';
+}
+
+.terms_gen_details p{
+    font-family: 'Montserrat-Medium';
+    text-align: justify;
+}
+
+.main_header_container h1{
+    font-family: 'Montserrat-Bold';
+}
+
+.reg_checkbox:focus, .reg_checkbox:active{
+    border: 1px solid #6946F6 !important;
+}
+
+.reg_checkbox:checked{
+    background-color: #6946F6 !important;
+    border: none;
 }
