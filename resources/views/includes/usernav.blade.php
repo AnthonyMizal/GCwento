@@ -24,7 +24,7 @@
         <li><a class="dropdown-item px-3 py-2 rounded-1 text_button" href="/favorites">Favorites</a></li>
         <li><a class="dropdown-item px-3 py-2 rounded-1 text_button" href="/mystories">My Stories</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item px-3 py-2 rounded-1 text_button logoutbutton" href="/logout">LOGOUT</a></li>
+        <li><button type="button" class="logout-button dropdown-item px-3 py-2 rounded-1 text_button logoutbutton">Logout</button></li>
       </ul>
     </li>
     {{-- <a href="#" class="btn border border-2 px-3 py-2 rounded-1 text-white login_button"></a> --}}

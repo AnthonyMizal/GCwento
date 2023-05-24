@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_users.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_stories.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_banning.css') }}" >
+
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/admin_login.css') }}" > --}}
 </head>
 

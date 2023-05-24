@@ -728,3 +728,23 @@ footer{
 .create_story_button:hover{
     background-color: #5535d4;
 }
+
+.swal2-confirm, .swal2-cancel{
+    padding: 12px !important;
+    margin-bottom: 20px;
+}
+.swal2-confirm {
+    background-color: #5535d4 !important;
+}
+
+.swal2-cancel{
+    background-color: #3D3D3D !important;
+}
+
+.swal2-icon, .swal2-success-ring, .swal2-icon-content {
+    border-color: #5535d4 !important;
+  }
+
+  .swal2-icon-content{
+    color: #5535d4 !important;
+  }

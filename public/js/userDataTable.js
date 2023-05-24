@@ -50,3 +50,53 @@ function getMyStories() {
 
       
 }
+
+$('.logout-button').on('click', function() {
+  Swal.fire({
+    title: 'Confirmation',
+    text: 'Are you sure you want to logout?',
+    icon: 'question',
+    showCancelButton: true,
+    background: '#222222',
+    confirmButtonText: 'Logout',
+    cancelButtonText: 'Cancel',
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    color: '#FFE1BB',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      $.ajax({
+        url: '/logout',
+        type: 'GET',
+        success: function(response) {
+          console.log(response.message); // Handle the success response as per your requirements
+          Swal.fire({
+            title: 'Logged Out',
+            text: 'You have been logged out successfully.',
+            icon: 'success',
+            iconColor: '#5535d4',
+            background: '#222222',
+            confirmButtonText: 'Proceed',
+            confirmButtonColor: '#3085d6',
+            color: '#FFE1BB',
+          }).then((result) => {
+            // Redirect to the desired page or perform any other desired action
+            window.location.href = '/';
+          });
+        },
+        error: function(xhr, status, error) {
+          console.error(error); // Handle the error response as per your requirements
+          Swal.fire({
+            title: 'Error',
+            text: 'Failed to logout.',
+            icon: 'error',
+            background: '#222222',
+            confirmButtonText: 'Proceed',
+            confirmButtonColor: '#3085d6',
+            color: '#FFE1BB',
+          });
+        }
+      });
+    }
+  });
+});
