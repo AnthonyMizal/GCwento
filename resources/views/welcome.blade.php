@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}" >
 </head>
 
-{{-- MAY 21 --}}
+{{-- asim mo thea --}}
 
 <body>
     @include('includes.usernav')
