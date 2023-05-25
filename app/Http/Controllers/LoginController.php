@@ -24,16 +24,26 @@ class LoginController extends Controller
             'password' => ['required']
         ]);
 
-        if(Auth::attempt($credentials)){
-            $request->session()->regenerate();
 
-            if(auth()->user()->role == 'Admin'){
-                return redirect()->intended('admin/index');
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+    
+            if ($user->status === 'Active') {
+                $request->session()->regenerate();
+    
+                if ($user->role === 'Admin') {
+                    return redirect()->intended('admin/index');
+                } else {
+                    return redirect()->intended('stories/index');
+                }
             } else {
-                return redirect()->intended('stories/index');
+                Auth::logout();
+                return back()->withErrors([
+                    'email' => 'Your account is currently banned.'
+                ])->onlyInput('email');
             }
-            
         }
+
 
         return back()->withErrors([
             'email' => 'The provided credentials do not match!'
