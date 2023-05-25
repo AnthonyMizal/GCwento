@@ -49,6 +49,7 @@ Route::get('user/publishCount/{id}', [App\Http\Controllers\UserController::class
 Route::get('user/rejectCount/{id}', [App\Http\Controllers\UserController::class, 'adminUserRejectCount']);
 Route::get('user/pendingCount/{id}', [App\Http\Controllers\UserController::class, 'adminUserPendingCount']);
 // Client
+Route::post('/send-request', [App\Http\Controllers\RequestController::class, 'sendRequest'])->name('send.request');
 
 Route::get('register/termsandconditions', [App\Http\Controllers\RegisterController::class, 'termsAndConditions']);
 
@@ -94,6 +95,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('myprofile/{id}', [App\Http\Controllers\RegisterController::class, 'edit']);
     Route::patch('myprofile/{id}', [App\Http\Controllers\RegisterController::class, 'update']);
+    
 
 
 });

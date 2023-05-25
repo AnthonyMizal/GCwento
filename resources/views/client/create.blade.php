@@ -25,7 +25,15 @@
                     <label class="input_label">Title</label>
                     <input type="text" placeholder="Enter the story title here..." name="title" class="form-control form_input px-2 py-3">
                 </div>
-                
+
+                <div class="mb-3 col-4">
+                    <label class="input_label">Accessibility</label>
+                    <select class="form-select form-control form_input px-2 py-3 shadow-none text-center" name="accessibility" id="accessibility">
+                        <option selected value="Public">Public</option>
+                        <option value="Private">Private</option>
+                    </select>
+                </div>
+
                 <div class="form-group genre_container mb-3">
                     <label for="genres" class="input_label">Genres:</label>
                     <br>

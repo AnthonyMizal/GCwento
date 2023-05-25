@@ -41,23 +41,91 @@
     
     
 <div class="container-fluid main_stories_container d-flex justify-content-center flex-wrap">
-    @foreach ($stories as $story)
-    
-    <a href="/story/{{$story->id}}" style="text-decoration: none">
-        <div class="col-3 story_item_container m-1 animated bounceIn rounded-4 d-flex">
-            <div class="d-flex align-items-center">
-                <img src="{{asset('/storage/img/'.$story->cover)}}" class="cover_img" alt="storycover">
-            </div>
-            <div class="story_block_details">
-                <h3 class="story_title dwhite_color">{{ $story->title}}</h3>
-                <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
-                <p class="story_description">{{ $story->description}}</p>
-                <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
-            </div>
-        </div>
-    </a>
 
-    @endforeach
+    @foreach ($stories as $story)
+    @if ($story->accessibility == 'Private')
+        @php
+            $request = $story->requests->where('reader_id', auth()->user()->id)->first();
+        @endphp
+        @if ($request && $request->status == 'Approved')
+            <a href="/story/{{$story->id}}" style="text-decoration: none">
+                <div class="col-3 story_item_container m-1 animated bounceIn rounded-4 d-flex">
+                    <div class="d-flex align-items-center">
+                        <img src="{{asset('/storage/img/'.$story->cover)}}" class="cover_img" alt="storycover">
+                    </div>
+                    <div class="story_block_details">
+                        <h3 class="story_title dwhite_color">{{ $story->title}}</h3>
+                        <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
+                        <p class="story_description">{{ $story->description}}</p>
+                        <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
+                        <p class="story_author bpurple_highlighter">{{ $request->status}}</p>
+                    </div>
+                </div>
+            </a>
+        @else
+            <div>
+                <!-- Show a message indicating the request status -->
+                @if ($request && $request->status == 'Pending')
+                <div class="col-3 story_item_container m-1 animated bounceIn rounded-4 d-flex">
+                    <div class="d-flex align-items-center">
+                        <img src="{{asset('/storage/img/'.$story->cover)}}" class="cover_img" alt="storycover">
+                    </div>
+                    <div class="story_block_details">
+                        <h3 class="story_title dwhite_color">{{ $story->title}}</h3>
+                        <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
+                        <p class="story_description">{{ $story->description}}</p>
+                        <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
+                        <p class="story_author bpurple_highlighter">{{ $request->status}}</p>
+                    </div>
+                </div>
+                @elseif ($request && $request->status == 'Rejected')
+                <div class="col-3 story_item_container m-1 animated bounceIn rounded-4 d-flex">
+                    <div class="d-flex align-items-center">
+                        <img src="{{asset('/storage/img/'.$story->cover)}}" class="cover_img" alt="storycover">
+                    </div>
+                    <div class="story_block_details">
+                        <h3 class="story_title dwhite_color">{{ $story->title}}</h3>
+                        <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
+                        <p class="story_description">{{ $story->description}}</p>
+                        <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
+                        <p class="story_author bpurple_highlighter">{{ $request->status}}</p>
+                    </div>
+                </div>
+                @else
+                    <a href="#" onclick="sendRequest({{ $story->id }}, {{$story->user->id}}, {{auth()->user()->id}})" style="text-decoration: none">
+                        <div class="col-3 story_item_container m-1 animated bounceIn rounded-4 d-flex">
+                            <div class="d-flex align-items-center">
+                                <img src="{{asset('/storage/img/'.$story->cover)}}" class="cover_img" alt="storycover">
+                            </div>
+                            <div class="story_block_details">
+                                <h3 class="story_title dwhite_color">{{ $story->title}}</h3>
+                                <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
+                                <p class="story_description">{{ $story->description}}</p>
+                                <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
+                                <p class="story_author bpurple_highlighter">{{ $story->accessibility}}</p>
+                            </div>
+                        </div>
+                    </a>
+                @endif
+            </div>
+        @endif
+    @else
+        <a href="/story/{{$story->id}}"  style="text-decoration: none">
+            <div class="col-3 story_item_container m-1 animated bounceIn rounded-4 d-flex">
+                <div class="d-flex align-items-center">
+                    <img src="{{asset('/storage/img/'.$story->cover)}}" class="cover_img" alt="storycover">
+                </div>
+                <div class="story_block_details">
+                    <h3 class="story_title dwhite_color">{{ $story->title}}</h3>
+                    <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
+                    <p class="story_description">{{ $story->description}}</p>
+                    <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
+                    <p class="story_author bpurple_highlighter">- {{ $story->accessibility}}</p>
+                </div>
+            </div>
+        </a>
+    @endif
+@endforeach
 </div>
 @endauth
 @endsection

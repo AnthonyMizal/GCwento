@@ -31,4 +31,9 @@ class Story extends Model
     {
         return $this->hasMany(Favorite::class);
     }
+
+    public function requests()
+    {
+    return $this->hasMany(StoryRequest::class);
+    }
 }

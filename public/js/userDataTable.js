@@ -163,3 +163,54 @@ $('.logout-button').on('click', function() {
     }
   });
 });
+
+function sendRequest(storyId, creatorId, readerId) {
+  Swal.fire({
+    title: 'Confirmation',
+    text: 'Are you sure you want to send a request to read this story?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Send Request',
+    cancelButtonText: 'Cancel',
+    confirmButtonColor: '#4BB1F7',
+    cancelButtonColor: '#c2c2c2',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+      $.ajax({
+        url: '/send-request',
+        type: 'POST',
+        data: {
+          story_id: storyId,
+          creator_id: creatorId,
+          reader_id: readerId
+        },
+        success: function(response) {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Your request has been sent successfully.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#4BB1F7',
+          }).then((result) => {
+            // Reload the page or perform any other actions
+          });
+        },
+        error: function(xhr, status, error) {
+          console.error(error); // Handle the error response as per your requirements
+          Swal.fire({
+            title: 'Error!',
+            text: 'Failed to send the request. Please try again.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#4BB1F7',
+          });
+        }
+      });
+    }
+  });
+}

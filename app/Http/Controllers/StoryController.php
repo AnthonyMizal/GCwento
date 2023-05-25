@@ -89,8 +89,10 @@ class StoryController extends Controller
         }
 
         $story = new Story;
+
         $story->user_id = $request->user_id;
         $story->title = $request->title;
+        $story->accessibility = $request->accessibility;
         $story->description = $request->description;
         $story->content = $request->content;
         $story->cover = $fileNameToStore;
