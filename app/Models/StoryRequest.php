@@ -14,4 +14,14 @@ class StoryRequest extends Model
     return $this->belongsTo(User::class);
     }
 
+    public function reader()
+    {
+    return $this->belongsTo(User::class);
+    }
+
+    public function story()
+    {
+    return $this->belongsTo(Story::class);
+    }
+
 }

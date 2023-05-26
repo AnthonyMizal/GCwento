@@ -36,6 +36,7 @@
     </div>
 
 
+
     <script src="{{asset('js/userDataTable.js')}}"></script>
     <script src="{{ asset('js/animation.js') }}"></script>
     <script src="{{ asset('js/admin.js') }}"></script>

@@ -58,7 +58,7 @@
                         <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
                         <p class="story_description">{{ $story->description}}</p>
                         <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
-                        <p class="story_author bpurple_highlighter">{{ $request->status}}</p>
+                        <p class="story_status status_public"><i class="fa fa-bullhorn status_public"></i> {{ $request->status}}</p>
                     </div>
                 </div>
             </a>
@@ -75,7 +75,8 @@
                         <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
                         <p class="story_description">{{ $story->description}}</p>
                         <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
-                        <p class="story_author bpurple_highlighter">{{ $request->status}}</p>
+                        <p class="story_status status_pending"><i class="fa fa-clock-o status_pending"></i>&nbsp{{ $request->status}}</p>
+                       </p>
                     </div>
                 </div>
                 @elseif ($request && $request->status == 'Rejected')
@@ -88,7 +89,7 @@
                         <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
                         <p class="story_description">{{ $story->description}}</p>
                         <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
-                        <p class="story_author bpurple_highlighter">{{ $request->status}}</p>
+                        <p class="story_status status_rejected"><i class="fa fa-times-circle status_rejected"></i>&nbsp{{ $request->status}}</p>
                     </div>
                 </div>
                 @else
@@ -102,7 +103,7 @@
                                 <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
                                 <p class="story_description">{{ $story->description}}</p>
                                 <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
-                                <p class="story_author bpurple_highlighter">{{ $story->accessibility}}</p>
+                                <p class="story_status status_private"><i class="fa fa-clock-o status_private"></i>&nbsp{{ $story->accessibility}}</p>
                             </div>
                         </div>
                     </a>
@@ -120,7 +121,7 @@
                     <p class="story_genre dwhite_color">GENRE: {{ $story->genres}}</p>
                     <p class="story_description">{{ $story->description}}</p>
                     <p class="story_author bpurple_highlighter">- {{ $story->user->username}}</p>
-                    <p class="story_author bpurple_highlighter">- {{ $story->accessibility}}</p>
+                    <p class="story_status status_public"><i class="fa fa-bullhorn status_public"></i> {{ $story->accessibility}}</p>
                 </div>
             </div>
         </a>

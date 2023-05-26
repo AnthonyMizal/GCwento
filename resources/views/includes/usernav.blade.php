@@ -23,6 +23,7 @@
         <li><a class="dropdown-item px-3 py-2 rounded-1 text_button" href="/myprofile/{{auth()->user()->id}}">Edit Profile</a></li>
         <li><a class="dropdown-item px-3 py-2 rounded-1 text_button" href="/favorites">Favorites</a></li>
         <li><a class="dropdown-item px-3 py-2 rounded-1 text_button" href="/mystories">My Stories</a></li>
+        <li><a class="dropdown-item px-3 py-2 rounded-1 text_button" href="/mystories/requests">Stories Request</a></li>
         <li><hr class="dropdown-divider"></li>
         <li><button type="button" class="logout-button dropdown-item px-3 py-2 rounded-1 text_button logoutbutton">Logout</button></li>
       </ul>

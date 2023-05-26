@@ -414,7 +414,39 @@ footer{
 .genre_whole_container{
     margin-left: 5px;
 }
+.story_status{
+    float: left !important;
+    margin-top: -12px;
+    margin-right: 10px;
+    padding: 3px 5px !important;
+    font-size: 10px;
+}
 
+.status_public{
+    color: rgb(69, 189, 69);
+    border: 1px solid rgb(69, 189, 69);
+    border-radius: 40px;
+}
+
+
+
+.status_pending{
+    color: #fa8a28;
+    border: 1px solid #fa8a28;
+    border-radius: 40px;
+}
+
+.status_rejected{
+    color: #fc4646;
+    border: 1px solid #fc4646;
+    border-radius: 40px;
+}
+
+.status_private{
+    color: #2448ff;
+    border: 1px solid #2448ff;
+    border-radius: 40px;
+}
 
 
 
@@ -701,6 +733,17 @@ footer{
 
 .mystories_delete_button:hover{
     background-color: #c22929;
+}
+
+.mystories_approve_button{
+    background-color:#6946F6;
+    color: white;
+    font-family: 'Montserrat-Bold';
+    font-size: 12px;
+}
+
+.mystories_approve_button:hover{
+    background-color:#5535d4;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
