@@ -31,27 +31,27 @@
                                         {{-- <h5 class="fw-bold mb-3 pb-2" style="letter-spacing: 1px; color: #3D3D3D;">Sign into your account</h5> --}}
                     
                                         <label class="normal_text"> Name </label>
-                                        <input type="text" class="form-control shadow-none normal_text border rounded-2 p-3 mb-3" name="fullname" value="{{ old("fullname")}}" placeholder="ex. John F. Doe">
+                                        <input type="text" class="form-control shadow-none normal_text border rounded-2 p-3 mb-3" name="fullname" value="{{ old("fullname")}}" placeholder="ex. John F. Doe" required>
                                         @if ($errors->has('fullname'))
                                         <span class="text-danger text-left">{{ $errors->first('fullname') }}</span>
                                         @endif
                                         <label class="normal_text"> Domain Email </label>
-                                        <input type="email" class="form-control shadow-none normal_text border rounded-2 p-3 mb-3" name="email" value="{{ old("email")}}" placeholder="ex. 202012345@gordoncollege.edu.ph">
+                                        <input type="email" class="form-control shadow-none normal_text border rounded-2 p-3 mb-3" name="email" value="{{ old("email")}}" placeholder="ex. 202012345@gordoncollege.edu.ph" required>
                                         @if ($errors->has('email'))
                                         <span class="text-danger text-left">{{ $errors->first('email') }}</span>
                                         @endif
                                         <label class="normal_text"> Username </label>
-                                        <input type="test" class="form-control shadow-none normal_text border rounded-2 p-3 mb-3" name="username" value="{{ old("username")}}" placeholder="ex. UniqueName">
+                                        <input type="test" class="form-control shadow-none normal_text border rounded-2 p-3 mb-3" name="username" value="{{ old("username")}}" placeholder="ex. UniqueName" required>
                                         @if ($errors->has('username'))
                                         <span class="text-danger text-left">{{ $errors->first('username') }}</span>
                                         @endif
                                         <label class="normal_text"> Password </label>
-                                        <input type="password" class="form-control shadow-none normal_text border rounded-2 p-3 mb-4" name="password" value="{{ old("password")}}" placeholder="Enter password">
+                                        <input type="password" class="form-control shadow-none normal_text border rounded-2 p-3 mb-4" name="password" value="{{ old("password")}}" placeholder="Enter password" required>
                                         @if ($errors->has('password'))
                                         <span class="text-danger text-left">{{ $errors->first('password') }}</span>
                                         @endif
                                         <label class="normal_text"> Password Confirmation</label>
-                                        <input type="password" class="form-control shadow-none normal_text border rounded-2 p-3 mb-4" name="password_confirmation" value="{{ old("password")}}" placeholder="Enter password">
+                                        <input type="password" class="form-control shadow-none normal_text border rounded-2 p-3 mb-4" name="password_confirmation" value="{{ old("password")}}" placeholder="Enter password" required>
                                         @if ($errors->has('password_confirmation'))
                                         <span class="text-danger text-left">{{ $errors->first('password_confirmation') }}</span>
                                         @endif

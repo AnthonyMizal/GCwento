@@ -79,7 +79,7 @@
                        </p>
                     </div>
                 </div>
-                @elseif ($request && $request->status == 'Rejected')
+                @elseif ($request && $request->status == 'Reject')
                 <div class="col-3 story_item_container m-1 animated bounceIn rounded-4 d-flex">
                     <div class="d-flex align-items-center">
                         <img src="{{asset('/storage/img/'.$story->cover)}}" class="cover_img" alt="storycover">
